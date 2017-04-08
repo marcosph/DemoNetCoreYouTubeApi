@@ -1,7 +1,54 @@
 ﻿@{
     ViewData["Title"] = "About";
 }
-<h2>@ViewData["Title"].</h2>
-<h3>@ViewData["Message"]</h3>
+<h2 class="w3-center">Automatic Slideshow</h2>
 
-<p>Use this area to provide additional information.</p>
+
+<hr />
+<div class="w3-content" style="max-width:1200px">
+    <img class="mySlides" src="~/images/c8464ad2-6e1e-4fb5-95cc-ccb91a2424ca.jpg" style="width:100%">
+    <img class="mySlides" src="http://placehold.it/800x400" style="width:100%">
+    <img class="mySlides" src="http://extra.globo.com/incoming/21176034-ddd-116/w640h360-PROP/robert.jpg" style="width:100%">
+
+
+    <div class="w3-row-padding w3-section">
+        <div class="w3-col s4">
+            <img class="demo w3-opacity w3-hover-opacity-off"
+                 src="~/images/c8464ad2-6e1e-4fb5-95cc-ccb91a2424ca.jpg"
+                 style="width:100%" id="1">
+        </div>
+        <div class="w3-col s4">
+            <img class="demo w3-opacity w3-hover-opacity-off"
+                 src="http://placehold.it/800x400" style="width:100%" id="2">
+        </div>
+        <div class="w3-col s4">
+            <img class="demo w3-opacity w3-hover-opacity-off"
+                 src="http://extra.globo.com/incoming/21176034-ddd-116/w640h360-PROP/robert.jpg" style="width:100%" id="3">
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <style type="text/css">
+        .mySlides {
+            display: none;
+        }
+    </style>
+    <script type="text/javascript">
+        var myIndex = 0;
+        carousel();
+
+        function carousel() {
+            var i;
+            var x = document.getElementsByClassName("mySlides");
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            myIndex++;
+            if (myIndex > x.length) { myIndex = 1 }
+            x[myIndex - 1].style.display = "block";
+            setTimeout(carousel, 2000); // Change image every 2 seconds
+        }
+    </script>
+}

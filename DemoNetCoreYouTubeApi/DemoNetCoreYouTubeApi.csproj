@@ -9,17 +9,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Include="wwwroot\images\c8464ad2-6e1e-4fb5-95cc-ccb91a2424ca.jpg" />
     <Content Include="wwwroot\js\auth.js" />
     <Content Include="wwwroot\js\auth.min.js" />
     <Content Include="wwwroot\js\search.js" />
     <Content Include="wwwroot\js\search.min.js" />
-    <Content Include="wwwroot\js\site - Copy (2).min.js" />
-    <Content Include="wwwroot\js\site - Copy.js">
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="wwwroot\js\site - Copy.min.js">
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.0.0" />
@@ -38,9 +32,9 @@
     <Content Update="wwwroot\js\auth.js">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Update="wwwroot\js\site - Copy %282%29.min.js">
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ControllersApi\" />
   </ItemGroup>
 
 </Project>
