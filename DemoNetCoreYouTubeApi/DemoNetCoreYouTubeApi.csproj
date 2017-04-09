@@ -9,9 +9,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="ControllersApi\**" />
+    <Content Remove="ControllersApi\**" />
+    <EmbeddedResource Remove="ControllersApi\**" />
+    <None Remove="ControllersApi\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="wwwroot\css\lightslider.css" />
     <Content Include="wwwroot\images\c8464ad2-6e1e-4fb5-95cc-ccb91a2424ca.jpg" />
     <Content Include="wwwroot\js\auth.js" />
     <Content Include="wwwroot\js\auth.min.js" />
+    <Content Include="wwwroot\js\lightslider.js" />
     <Content Include="wwwroot\js\search.js" />
     <Content Include="wwwroot\js\search.min.js" />
   </ItemGroup>
@@ -32,9 +41,6 @@
     <Content Update="wwwroot\js\auth.js">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ControllersApi\" />
   </ItemGroup>
 
 </Project>
