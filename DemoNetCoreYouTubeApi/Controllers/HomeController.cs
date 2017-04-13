@@ -16,14 +16,11 @@ namespace DemoNetCoreYouTubeApi.Controllers
         public IActionResult About()
         {
             ViewData["Message"] = "Your application description page.";
-
             return View();
         }
 
         public IActionResult Contact()
-        {
-            
-
+        {           
             return View();
         }
 

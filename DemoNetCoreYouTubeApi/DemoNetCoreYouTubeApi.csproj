@@ -18,6 +18,7 @@
   <ItemGroup>
     <Content Include="wwwroot\css\lightslider.css" />
     <Content Include="wwwroot\images\c8464ad2-6e1e-4fb5-95cc-ccb91a2424ca.jpg" />
+    <Content Include="wwwroot\images\controls.png" />
     <Content Include="wwwroot\js\auth.js" />
     <Content Include="wwwroot\js\auth.min.js" />
     <Content Include="wwwroot\js\lightslider.js" />
