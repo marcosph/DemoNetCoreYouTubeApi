@@ -16,6 +16,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="Properties\PublishProfiles\Default Settings.pubxml" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Include="wwwroot\css\lightslider.css" />
     <Content Include="wwwroot\images\c8464ad2-6e1e-4fb5-95cc-ccb91a2424ca.jpg" />
     <Content Include="wwwroot\images\controls.png" />
@@ -42,6 +46,9 @@
     <Content Update="wwwroot\js\auth.js">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\PublishProfiles\" />
   </ItemGroup>
 
 </Project>

@@ -2,6 +2,18 @@
     ViewData["Title"] = "Contact";
 }
 <h1>Demo Slider</h1>
+https://support.shareaholic.com/hc/en-us/articles/200471586-Customize-Share-Titles-Links-Images
+https://developers.facebook.com/apps/207409349755676/settings/
+<div class="fb-like"
+     data-share="true"
+     data-width="450"
+     data-show-faces="true"
+     data-title='This is my Page Title'
+     data-image='http://www.TheURLtoShare.com/image.jpg'>
+</div>
+<script>
+    
+</script>
 <div class="row">
     <div class="col-sm-6">
         <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
@@ -37,7 +49,6 @@
         </div>
     </div>
 </div>
-
 <hr />
 <div class="row">
     <div class="col-sm-6">
@@ -86,12 +97,11 @@
 </div>
 
 
-@section scripts {
-  
+@section scripts {  
 <script src="~/js/lightslider.js"></script>
 <link href="~/css/lightslider.css" rel="stylesheet" />
     
-    <style type="text/css">
+ <style type="text/css">
         .demo {
             width: 420px;
         }
@@ -120,6 +130,24 @@
     <script type="text/javascript">
         // http://sachinchoolur.github.io/lightslider/
         //http://jsfiddle.net/sachin377/2patspw2/
+
+        window.fbAsyncInit = function () {
+            FB.init({
+                appId: '207409349755676',
+                xfbml: true,
+                version: 'v2.8'
+            });
+            FB.AppEvents.logPageView();
+        };
+
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) { return; }
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+
         $(document).ready(function () {
             $('#lightSlider').lightSlider({
                 gallery: true,
