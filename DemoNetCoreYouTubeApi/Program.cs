@@ -17,7 +17,7 @@ namespace DemoNetCoreYouTubeApi
                 .UseIISIntegration()
                 .UseStartup<Startup>()
                 .UseApplicationInsights()
-                //.UseUrls("http://localhost")
+                .UseUrls("http://localhost")
                 .Build();
 
             host.Run();

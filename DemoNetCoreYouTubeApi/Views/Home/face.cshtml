@@ -5,42 +5,81 @@
      data-layout="button_count">
 </div>
 
+<hr />
+<div class="page-header">
+    <h1>Share Dialog</h1>
+</div>
+<div id="shareBtn" class="btn btn-success clearfix">Share</div>
+<hr />
+<div class="page-header">
+    <h1>Share Twieter</h1>
+    <ul>
+        <li>
+            <a class="facebook customer share" 
+               href="http://www.facebook.com/sharer.php?u=http://codepen.io/patrickkahl" 
+               title="Facebook share" target="_blank">Facebook</a>
+        </li>
+        <li>
+            <a class="twitter customer share" 
+               href="http://twitter.com/share?url=http://codepen.io/patrickkahl&amp; text=Share popup on &amp;hashtags=codepen" 
+               title="Twitter share" target="_blank">Twitter</a>
+        </li>
+        <li>
+            <a class="google_plus customer share" href="https://plus.google.com/share?url=http://codepen.io/patrickkahl" title="Google Plus Share" target="_blank">Google Plus</a>
+        </li>
+        <li>
+            <a class="xing customer share" href="https://www.xing.com/social_plugins/share?url=http://codepen.io/patrickkahl" title="Xing Share" target="_blank">Xing</a>
+        </li>
+        <li>
+            <a class="linkedin customer share" href="http://www.linkedin.com/shareArticle?mini=true&url=http://codepen.io/patrickkahl" title="linkedin Share" target="_blank">LinkedIn</a>
+        </li>
+    </ul>
+</div>
 
-<script>
- window.fbAsyncInit = function () {
+
+@section Scripts
+{
+
+<script type="text/javascript">
+    (function($){  
+  $.fn.customerPopup = function (e, intWidth, intHeight, blnResize) {
+    // Prevent default anchor event
+    e.preventDefault();
+    // Set values for window
+    intWidth = intWidth || '500';
+    intHeight = intHeight || '400';
+    strResize = (blnResize ? 'yes' : 'no');
+    // Set title and open popup with focus on it
+    var strTitle = ((typeof this.attr('title') !== 'undefined') ? this.attr('title') : 'Social Share'),
+        strParam = 'width=' + intWidth + ',height=' + intHeight + ',resizable=' + strResize,
+        objWindow = window.open(this.attr('href'), strTitle, strParam).focus();
+  }
+  /* ================================================== */
+    $(document).ready(function ($) {
+        $('#metaelementimg').attr('content', 'my new meta description');
+    $('.customer.share').on("click", function(e) {
+      $(this).customerPopup(e);
+    });
+  });
+
+}(jQuery));
+
+    window.fbAsyncInit = function () {
         FB.init({
             appId: '290040174765533',
             xfbml: true,
             version: 'v2.8'
         });
         FB.AppEvents.logPageView();
-      
     };
-(function (d, s, id) {
+    (function (d, s, id) {
         var js, fjs = d.getElementsByTagName(s)[0];
         if (d.getElementById(id)) return;
         js = d.createElement(s); js.id = id;
         js.src = "//connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v2.8&appId=290040174765533";
         fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));</script>
-<hr />
-<div class="page-header">
-    <h1>Share Dialog</h1>
-</div>
+    }(document, 'script', 'facebook-jssdk'));
 
-<p>Click the button below to trigger a Share Dialog</p>
-
-<div id="shareBtn" class="btn btn-success clearfix">Share</div>
-
-<p style="margin-top: 50px">
-    <hr />
-    <a class="btn btn-small" href="https://developers.facebook.com/docs/sharing/reference/share-dialog">Share Dialog Documentation</a>
-</p>
-
-@section Scripts
-{
-
-<script type="text/javascript">
    //https://grobmeier.solutions/sharing-images-facebook-javascript-19102015.html
    //http://stackoverflow.com/questions/17139272/onclick-share-image-on-facebook
   // /// http://stackoverflow.com/questions/30244642/make-my-own-custom-facebook-share-button
@@ -56,7 +95,7 @@
   //          name: "The name who will be displayed on the post",
   //          description: "The description who will be displayed",
   //          title:'fasdfadfasdfasf'
-  //      }, function (response) { 
+  //      }, function (response) {
   //          console.log(response);
   //      });
   //  }

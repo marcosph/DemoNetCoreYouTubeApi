@@ -34,6 +34,12 @@ namespace DemoNetCoreYouTubeApi.Controllers
             return View();
         }
 
+        [Route("btn")]
+        public IActionResult btn()
+        {
+            return View();
+        }
+
         public IActionResult Error()
         {
             return View();
