@@ -84,39 +84,38 @@
    //http://stackoverflow.com/questions/17139272/onclick-share-image-on-facebook
   // /// http://stackoverflow.com/questions/30244642/make-my-own-custom-facebook-share-button
 
-  //  document.getElementById('shareBtn').onclick = function () {
-  //      FB.ui({
-  //          method: 'share',
-  //          display: 'popup',
-  //         // href: 'https://developers.facebook.com/docs/',
-  //          href: 'http://127.0.0.1:53340/',
-  //          link: "The link you want to share",
-  //          picture: 'http://s2.glbimg.com/nQXo2J1QCsi0ZHkdw5ypwafJR4o=/620x430/e.glbimg.com/og/ed/f/original/2015/11/04/ac_katia_abreu_foto_antonio_cruz_09092015_002.jpg',
-  //          name: "The name who will be displayed on the post",
-  //          description: "The description who will be displayed",
-  //          title:'fasdfadfasdfasf'
-  //      }, function (response) {
-  //          console.log(response);
-  //      });
-  //  }
+    document.getElementById('shareBtn').onclick = function () {
+        FB.ui({
+            method: 'share',
+            display: 'popup',           
+            href: 'http://netcoremp-001-site1.atempurl.com/home/face',
+            link: "The link you want to share",
+            picture: 'http://s2.glbimg.com/nQXo2J1QCsi0ZHkdw5ypwafJR4o=/620x430/e.glbimg.com/og/ed/f/original/2015/11/04/ac_katia_abreu_foto_antonio_cruz_09092015_002.jpg',
+            name: "The name who will be displayed on the post",
+            description: "The description who will be displayed",
+            title:'fasdfadfasdfasf'
+        }, function (response) {
+            console.log(response);
+        });
+    }
 
 
-  //  window.fbAsyncInit = function () {
-  //  FB.init({
-  //    appId: '290040174765533',
-  //    xfbml      : true,
-  //    version    : 'v2.8'
-  //  });
-  //  FB.AppEvents.logPageView();
-  //};
+    window.fbAsyncInit = function () {
+    FB.init({
+      appId: '290040174765533',
+      xfbml      : true,
+      version    : 'v2.8'
+    });
+    FB.AppEvents.logPageView();
+  };
 
-  //(function(d, s, id){
-  //   var js, fjs = d.getElementsByTagName(s)[0];
-  //   if (d.getElementById(id)) {return;}
-  //   js = d.createElement(s); js.id = id;
-  //   js.src = "//connect.facebook.net/en_US/sdk.js";
-  //   fjs.parentNode.insertBefore(js, fjs);
-  // }(document, 'script', 'facebook-jssdk'));
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
 </script>
     
 }
