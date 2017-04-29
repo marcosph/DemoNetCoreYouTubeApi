@@ -1,15 +1,27 @@
-﻿<h1>Button Share Facebook</h1>
-
-<div class="fb-share-button"  
-     data-href="http://netcoremp-001-site1.atempurl.com/home/face" 
-     data-layout="button_count">
-</div>
-
-<hr />
+﻿
 <div class="page-header">
     <h1>Share Dialog</h1>
 </div>
 <div id="shareBtn" class="btn btn-success clearfix">Share</div>
+<div id="fb-root" class=" fb_reset"></div>
+<script>
+    window.fbAsyncInit = function () {
+        FB.init({
+            appId: '226793644470810',
+            xfbml: true,
+            version: 'v2.9'
+        });
+        FB.AppEvents.logPageView();
+    };
+
+    (function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) { return; }
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+</script>
 <hr />
 <div class="page-header">
     <h1>Share Twieter</h1>
@@ -41,6 +53,9 @@
 {
 
 <script type="text/javascript">
+     //https://grobmeier.solutions/sharing-images-facebook-javascript-19102015.html
+   //http://stackoverflow.com/questions/17139272/onclick-share-image-on-facebook
+  // /// http://stackoverflow.com/questions/30244642/make-my-own-custom-facebook-share-button
     (function($){  
   $.fn.customerPopup = function (e, intWidth, intHeight, blnResize) {
     // Prevent default anchor event
@@ -56,6 +71,7 @@
   }
   /* ================================================== */
     $(document).ready(function ($) {
+       
         $('#metaelementimg').attr('content', 'my new meta description');
     $('.customer.share').on("click", function(e) {
       $(this).customerPopup(e);
@@ -64,58 +80,27 @@
 
 }(jQuery));
 
-    window.fbAsyncInit = function () {
-        FB.init({
-            appId: '290040174765533',
-            xfbml: true,
-            version: 'v2.8'
-        });
-        FB.AppEvents.logPageView();
-    };
-    (function (d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
-        js.src = "//connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v2.8&appId=290040174765533";
-        fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
-
-   //https://grobmeier.solutions/sharing-images-facebook-javascript-19102015.html
-   //http://stackoverflow.com/questions/17139272/onclick-share-image-on-facebook
-  // /// http://stackoverflow.com/questions/30244642/make-my-own-custom-facebook-share-button
+   
 
     document.getElementById('shareBtn').onclick = function () {
         FB.ui({
-            method: 'share',
-            display: 'popup',           
-            href: 'http://netcoremp-001-site1.atempurl.com/home/face',
-            link: "The link you want to share",
-            picture: 'http://s2.glbimg.com/nQXo2J1QCsi0ZHkdw5ypwafJR4o=/620x430/e.glbimg.com/og/ed/f/original/2015/11/04/ac_katia_abreu_foto_antonio_cruz_09092015_002.jpg',
-            name: "The name who will be displayed on the post",
-            description: "The description who will be displayed",
-            title:'fasdfadfasdfasf'
-        }, function (response) {
-            console.log(response);
+            method: 'share_open_graph',
+            action_type: 'og.shares',
+            action_properties: JSON.stringify({
+                object: {
+                    'og:url': 'http://netcoremp-001-site1.atempurl.com/home/face',
+                    'og:title': 'hello kdkd',
+                    'og:description': 'dfjddf fasdfa',
+                    'og:og:image:width': '2560',
+                    'og:image:height': '960',
+                    'og:image': 'http://s2.glbimg.com/UTqooSm2MI571fECU7DZcIvPfHE=/1200x/smart/filters:strip_icc()/s04.video.glbimg.com/x720/5833003.jpg'
+                }
+            })
         });
     }
 
-
-    window.fbAsyncInit = function () {
-    FB.init({
-      appId: '290040174765533',
-      xfbml      : true,
-      version    : 'v2.8'
-    });
-    FB.AppEvents.logPageView();
-  };
-
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "//connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
+   
+   
 </script>
     
 }
